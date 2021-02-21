@@ -4,7 +4,7 @@
 
 #include <ESP8266WiFi.h>
 
-
+// Настройки сети. TODO: вынести в отдельный файл
 #ifndef STASSID
 #define STASSID "robot"
 #define STAPSK  "SZCP%ca2kQxeqfWk3x2M"
@@ -13,12 +13,12 @@
 const char* ssid = STASSID;
 const char* password = STAPSK;
 
+// Определяем пины, на которых будет управление
 #define FLOOR_1_PIN D1
 #define FLOOR_2_PIN D2
 
 
-// Create an instance of the server
-// specify the port to listen on as an argument
+// Устанавливаем, на какой порту будет работать наш веб-сервер
 WiFiServer server(80);
 
 /* 
@@ -71,10 +71,6 @@ void setup() {
 /* ------------------------------------------------------------------------------------------*/
 
 void loop() {
-  // Получаем время от начала работы
-  
-
-
   
   // Ждём подключения клиента
   WiFiClient client = server.available();

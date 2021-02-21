@@ -8,31 +8,33 @@ void run_Request (String requestString, WiFiClient client) {
   if (requestString.indexOf(F("/main/info")) != -1){
     Serial.println("info");
   }
+
+  /* ------------------------------------------------------------------------------------------*/
   
-  if (requestString.indexOf(F("/sensor_1/status")) != -1){
-    Serial.println("/sensor_1/status");
+  if (requestString.indexOf(F("/Floor_1/LED/status")) != -1){
+    Serial.println("Свет на 1 этаже: вывести статус");
+  }
+
+  if (requestString.indexOf(F("/Floor_1/LED/ON")) != -1){
+    Serial.println("Свет на 1 этаже: Включить освещение");
   }
   
-  if (requestString.indexOf(F("/sensor_1/temp")) != -1){
-    Serial.println("/sensor_1/temp");
+  if (requestString.indexOf(F("/Floor_1/LED/OFF")) != -1){
+    Serial.println("Свет на 1 этаже: Выключить освещение");
+  }
+
+  /* ------------------------------------------------------------------------------------------*/
+
+  if (requestString.indexOf(F("/Floor_2/LED/status")) != -1){
+    Serial.println("Свет на 1 этаже: вывести статус");
+  }
+
+  if (requestString.indexOf(F("/Floor_2/LED/ON")) != -1){
+    Serial.println("Свет на 1 этаже: Включить освещение");
   }
   
-  if (requestString.indexOf(F("/sensor_1/hem")) != -1){
-    Serial.println("/sensor_1/hem");
+  if (requestString.indexOf(F("/Floor_2/LED/OFF")) != -1){
+    Serial.println("Свет на 1 этаже: Выключить освещение");
   }
-  
-  if (requestString.indexOf(F("/led/status")) != -1){
-    SensorLed_Status(client);
-    Serial.println("Command LED -> Status");
-  }
-  
-  if (requestString.indexOf(F("/led/on")) != -1){
-    SensorLed_On(client);
-    Serial.println("Command LED -> ON");
-  }
-  
-  if (requestString.indexOf(F("/led/off")) != -1){
-    SensorLed_Off(client);
-    Serial.println("Command LED -> OFF");
-  }
+
 }
