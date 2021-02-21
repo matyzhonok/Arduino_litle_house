@@ -1,5 +1,5 @@
 /*
-    Данный скетч отображает состояние подлюченных датчиков и позволяет управлять светодиодом.
+    Данный скетч позволяет упралять освещением в доме (макете).
 */
 
 #include <ESP8266WiFi.h>
@@ -12,6 +12,9 @@
 
 const char* ssid = STASSID;
 const char* password = STAPSK;
+
+#define FLOOR_1_PIN D1
+#define FLOOR_2_PIN D2
 
 
 // Create an instance of the server
@@ -34,9 +37,17 @@ void setup() {
   Serial.begin(115200);
   delay(500);
 
-  // prepare LED
+  // Встроенный светодиод
   pinMode(LED_BUILTIN, OUTPUT);
   digitalWrite(LED_BUILTIN, 0);
+  
+  // Пин для управления светом на 1 этаже
+  pinMode(FLOOR_1_PIN, OUTPUT);
+  digitalWrite(FLOOR_1_PIN, 0);
+  
+  // Пин для управления светом на 2 этаже
+  pinMode(FLOOR_2_PIN, OUTPUT);
+  digitalWrite(FLOOR_2_PIN, 0);
 
   // Подключаемся к wi-fi сети
   WiFi.mode(WIFI_STA);
