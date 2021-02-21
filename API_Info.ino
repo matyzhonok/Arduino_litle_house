@@ -1,4 +1,4 @@
-void request_Info(WiFiClient client) {
+void request_status(WiFiClient client) {
   String str;
   LED_Status = get_LedStatus();
   String timeAfterStartStr = millis_ToString(millis());

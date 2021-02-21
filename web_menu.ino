@@ -1,7 +1,7 @@
 void run_Request (String requestString, WiFiClient client) {
   
   if (requestString.indexOf(F("/main/status")) != -1){
-    request_Info(client);
+    request_status(client);
     Serial.println("Запрос статуса");
   }
   
@@ -34,6 +34,20 @@ void run_Request (String requestString, WiFiClient client) {
   }
   
   if (requestString.indexOf(F("/Floor_2/LED/OFF")) != -1){
+    Serial.println("Свет на 1 этаже: Выключить освещение");
+  }
+ 
+  /* ------------------------------------------------------------------------------------------*/
+
+  if (requestString.indexOf(F("/LED_BUILTIN/LED/status")) != -1){
+    Serial.println("Свет на 1 этаже: вывести статус");
+  }
+
+  if (requestString.indexOf(F("/LED_BUILTIN/LED/ON")) != -1){
+    Serial.println("Свет на 1 этаже: Включить освещение");
+  }
+  
+  if (requestString.indexOf(F("/LED_BUILTIN/LED/OFF")) != -1){
     Serial.println("Свет на 1 этаже: Выключить освещение");
   }
 
