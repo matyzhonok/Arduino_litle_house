@@ -1,6 +1,6 @@
 void request_status(WiFiClient client) {
   String str;
-  LED_Status = get_LedStatus();
+  LED_Status = get_BUILTIN_LED_Status();
   String timeAfterStartStr = millis_ToString(millis());
   if (LED_Status){
     str = "Светодиод ВКЛЮЧЁН. (<a href='http://" + MyIP + "/LED=OFF'>выключить</a>)<br />";

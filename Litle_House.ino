@@ -43,11 +43,11 @@ void setup() {
   
   // Пин для управления светом на 1 этаже
   pinMode(FLOOR_1_PIN, OUTPUT);
-  digitalWrite(FLOOR_1_PIN, 0);
+  digitalWrite(FLOOR_1_PIN, 1);
   
   // Пин для управления светом на 2 этаже
   pinMode(FLOOR_2_PIN, OUTPUT);
-  digitalWrite(FLOOR_2_PIN, 0);
+  digitalWrite(FLOOR_2_PIN, 1);
 
   // Подключаемся к wi-fi сети
   WiFi.mode(WIFI_STA);

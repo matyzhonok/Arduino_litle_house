@@ -1,16 +1,16 @@
-void SensorLed_On (WiFiClient client){
+void BUILTIN_LED_On (WiFiClient client){
   digitalWrite(LED_BUILTIN, false);
   print_to_web("{\"status\": \"Ok\"}", client, false);
 }
 
-void SensorLed_Off(WiFiClient client) {
+void BUILTIN_LED_Off(WiFiClient client) {
   digitalWrite(LED_BUILTIN, true);
   print_to_web("{\"status\": \"Ok\"}", client, false);
 }
 
-void SensorLed_Status(WiFiClient client) {
+void BUILTIN_LED_Status(WiFiClient client) {
   String str = String("{\"Led status\": \"");
-  if (get_LedStatus()) {
+  if (get_BUILTIN_LED_Status()) {
     str = str + String("On");
   } else {
     str = str + String("Off");
@@ -19,6 +19,6 @@ void SensorLed_Status(WiFiClient client) {
   print_to_web(str, client, false);  
 }
 
-boolean get_LedStatus () {
+boolean get_BUILTIN_LED_Status () {
   return (!digitalRead(LED_BUILTIN));
 }
