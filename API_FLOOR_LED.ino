@@ -48,5 +48,5 @@ void Floor_2_Led_Status(WiFiClient client) {
 }
 
 boolean get_Floor_2_Led_Status () {
-  return (!digitalRead(FLOOR_1_PIN));
+  return (!digitalRead(FLOOR_2_PIN));
 }
